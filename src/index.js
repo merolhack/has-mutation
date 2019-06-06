@@ -14,17 +14,13 @@ console.log('Select an option:');
 const hasMutation = function (dnaSequence) {
   // Parse the string to an Array of strings
   const dnaArray = JSON.parse(dnaSequence.replace(/\'/g, '"'));
-  // Convert the single dimensional Array to multidimencional array
-  const dnaMultiArray = dnaArray.map((item) => {
-    return Object.keys(item).sort().map((key) => {
-      return item[key]
-    })
-  });
-  // Four letters to check if is mutant
-  const secA = ['A', 'A', 'A', 'A'];
-  const secC = ['C', 'C', 'C', 'C'];
-  const secG = ['G', 'G', 'G', 'G'];
-  const secT = ['T', 'T', 'T', 'T'];
+  // Convert the single dimensional Array to multidimensional array
+  const dnaMultiArray = dnaArray.map((item) => Object.keys(item).sort().map((key) => item[key]));
+  // Only these four letters are available to check if is mutant
+  const secA = new Array(4).fill('A');
+  const secC = new Array(4).fill('C');
+  const secG = new Array(4).fill('G');
+  const secT = new Array(4).fill('T');
   // Count the number of occurrences
   let occurenceCounter = 0;
   // Check horizontally
