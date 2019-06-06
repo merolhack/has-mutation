@@ -1,20 +1,25 @@
 {
   "name": "has-mutation",
   "version": "1.0.0",
-  "description": "Project that analyse if a person has generic differences",
+  "description": "Project that analyse if a person has genetic differences based on their DNA sequence",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/merolhack/has-mutation.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["mutant", "human", "nodejs"],
+  "author": "Lenin Meza <merolhack@gmail.com> (http://www.linkedin.com/in/leninmezazarco)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/merolhack/has-mutation/issues"
   },
-  "homepage": "https://github.com/merolhack/has-mutation#readme"
+  "homepage": "https://github.com/merolhack/has-mutation#readme",
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  },
+  "private": true
 }
