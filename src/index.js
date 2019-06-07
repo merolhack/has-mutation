@@ -37,11 +37,11 @@ const hasMutation = function (dnaSequence) {
     }
   }
   // Check vertically
-  for (i = 0; i < dnaSequence[0].length; i++) {
+  for (i = 0; i < dnaArray[0].length; i++) {
     for (j = 0; j <= dnaMultiArray.length - 4; j++) {
       let dnaVertical = [];
       for (k = 0; k < 4; k++) {
-        dnaVertical.push(dnaSequence[j + k][i]);
+        dnaVertical.push(dnaArray[j + k][i]);
       }
       const dataJoined = dnaVertical.join();
       if (dataJoined === secA || dataJoined === secC || dataJoined === secG || dataJoined === secT) {
@@ -51,10 +51,10 @@ const hasMutation = function (dnaSequence) {
   }
   // Check diagonally
   for (i = 0; i <= dnaMultiArray.length - 4; i++) {
-    for (j = 0; j <= dnaSequence[i].length - 4; j++) {
+    for (j = 0; j <= dnaArray[i].length - 4; j++) {
       let dnaDiagonally = [];
       for (k = 0; k < 4; k++) {
-        dnaDiagonally.push(dnaSequence[i + k][j + k]);
+        dnaDiagonally.push(dnaArray[i + k][j + k]);
       }
       const dataJoined = dnaDiagonally.join();
       if (dataJoined === secA || dataJoined === secC || dataJoined === secG || dataJoined === secT) {
@@ -64,10 +64,10 @@ const hasMutation = function (dnaSequence) {
   }
   // Check reverse diagonal
   for (i = 0; i <= dnaMultiArray.length - 4; i++) {
-    for (j = dnaSequence[i].length - 1; j >= 0 + 4 - 1; j--) {
+    for (j = dnaArray[i].length - 1; j >= 0 + 4 - 1; j--) {
       let dnaReverseDiagonal = [];
       for (k = 0; k < 4; k++) {
-        dnaReverseDiagonal.push(dnaSequence[i + k][j - k]);
+        dnaReverseDiagonal.push(dnaArray[i + k][j - k]);
       }
       const dataJoined = dnaReverseDiagonal.join();
       if (dataJoined === secA || dataJoined === secC || dataJoined === secG || dataJoined === secT) {
@@ -75,7 +75,7 @@ const hasMutation = function (dnaSequence) {
       }
     }
   }
-  return (occurenceCounter > 0) ? true : false ;
+  return (occurenceCounter >= 2) ? true : false ;
 };
 
 const checkDna = function () {
